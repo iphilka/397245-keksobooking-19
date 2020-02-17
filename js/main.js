@@ -33,7 +33,7 @@ var generatePhotos = function () {
 var renderAd = function (i) {
   var locationX = randomInteger(0, 1200);
   var locationY = randomInteger(130, 630);
-  ads[i] =  {
+  ads[i] = {
     'author': {
       'avatar': 'img/avatars/user0' + (i + 1) + '.png'
     },
@@ -41,14 +41,14 @@ var renderAd = function (i) {
       'tittle': 'Заголовок',
       'address': String(locationX) + String(locationY),
       'price': randomInteger(100, 1000),
-      'type': TYPES[randomInteger(0,TYPES.length)],
+      'type': TYPES[randomInteger(0, TYPES.length)],
       'rooms': 3,
       'guests': 5,
       'checkin': TIMES[randomInteger(0, TIMES.length)],
       'checkout': TIMES[randomInteger(0, TIMES.length)],
       'features': generateFeatures(),
       'description': 'Something about this',
-      'photos' : generatePhotos()
+      'photos': generatePhotos()
     },
     'location': {
       'x': locationX,
@@ -72,9 +72,6 @@ var generatePinElement = function (ad) {
   pinElement.querySelector('img').setAttribute('alt', ad.offer.title);
   fragment.appendChild(pinElement);
 };
-
-
-
 
 for (var i = 0; i < COUNT_AD; i++) {
   renderAd(i);
